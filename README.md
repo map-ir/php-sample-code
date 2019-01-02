@@ -3,5 +3,5 @@ Basic sample codes for Map.ir services
 
 todo list:
 
-- [ ] search service
+- [x] search service
 - [ ] reverse geocode
