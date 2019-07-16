@@ -10,7 +10,7 @@ include_once 'CURL.php';
 
 class Search
 {
-    private $text, $coordinate, $lat, $lon, $select, $filter, $url;
+    private $text, $coordinate, $lat, $lon, $select, $filter, $url, $apiKey;
 
     public $response;
 
@@ -19,19 +19,20 @@ class Search
         $this->url = $url;
     }
 
-    public function get($text, $lat, $lon, $select = null, $filter = null)
+    public function get($text, $lat, $lon, $select = null, $filter = null, $apiKey)
     {
         $this->text = $text;
         $this->lat = $lat;
         $this->lon = $lon;
         $this->select = $select;
         $this->filter = $filter;
-
+        $this->apiKey=$apiKey;
         $this->makeCoordinate($this->lat, $this->lon);
 
         $curl = new CURL($this->url);
         $curl->setHeaders([
-            'Content-Type: application/json'
+            'Content-Type: application/json',
+            'x-api-key:'.$this->apiKey
         ]);
         $curl->post($this->makeRequest());
         return $curl->parse();
