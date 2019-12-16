@@ -34,7 +34,7 @@ class DistanceMatrix
         $origins_url = $this->makeLocations($this->origins);
         $destinations_url = $this->makeLocations($this->destinations);
         $sorted_url = 'false';
-        if ($this->sorted) $this->sorted = 'true';
+        if ($this->sorted) $sorted_url = 'true';
         return  $this->url."?origins=$origins_url&destinations=$destinations_url&sorted=$sorted_url";
     }
 
