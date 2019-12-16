@@ -6,13 +6,26 @@
  * Time: 2:15 PM
  */
 
-include_once 'Reverse.php';
+include_once 'DistanceMatrix.php';
 
-$url = 'https://map.ir/reverse';
+$url = 'https://map.ir/distancematrix';
 
-$lat = 35.7006311416626;
-$lon = 51.3361930847168;
+$origins = [
+    [
+        'first_origin', // id
+        35.704965, // lat
+        51.355551 // lon
+    ]
+];
+$destinations = [
+    [
+        'first_destination',
+        35.720104,
+        51.399038
+    ]
+];
+$sorted = true;
 $apiKey='Your map.ir api key';
 
-$revers = new Reverse($url);
-var_dump($revers->get($lat, $lon, $apiKey));
+$distance_matrix = new DistanceMatrix($url);
+print_r($distance_matrix->get($apiKey, $origins, $destinations, $sorted));

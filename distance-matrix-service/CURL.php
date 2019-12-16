@@ -24,7 +24,7 @@ class CURL
         $this->headers = $headers;
     }
 
-    public function post()
+    public function get()
     {
         if ($this->headers) {
             curl_setopt($this->client, CURLOPT_HTTPHEADER, $this->headers);
