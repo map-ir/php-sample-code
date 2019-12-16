@@ -23,7 +23,7 @@ class Reverse
             'Content-Type: application/json',
             'x-api-key:'.$this->apiKey
         ]);
-        $curl->post();
+        $curl->get();
         return $curl->parse();
     }
 

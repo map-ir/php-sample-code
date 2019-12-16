@@ -14,7 +14,7 @@ class CURL
 
     public $headers;
 
-    public $respone;
+    public $response;
     private $server_output;
 
     public function __construct($url)
@@ -45,16 +45,16 @@ class CURL
     public function parse()
     {
         if ($this->server_output) {
-            $this->respone = json_decode($this->server_output, true);
+            $this->response = json_decode($this->server_output, true);
         } else {
-            $this->respone = [];
+            $this->response = [];
         }
 
-        return $this->respone;
+        return $this->response;
     }
 
     public function getResponse()
     {
-        return $this->respone;
+        return $this->response;
     }
 }

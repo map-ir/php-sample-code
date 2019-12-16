@@ -40,16 +40,16 @@ class CURL
     public function parse()
     {
         if ($this->server_output) {
-            $this->respone = $this->server_output;
+            $this->response = $this->server_output;
         } else {
-            $this->respone = [];
+            $this->response = [];
         }
         header("Content-type: img-png");
-        echo $this->respone;
+        echo $this->response;
     }
 
     public function getResponse()
     {
-        return $this->respone;
+        return $this->response;
     }
 }

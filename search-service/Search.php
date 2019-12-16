@@ -26,7 +26,7 @@ class Search
         $this->lon = $lon;
         $this->select = $select;
         $this->filter = $filter;
-        $this->apiKey=$apiKey;
+        $this->apiKey = $apiKey;
         $this->makeCoordinate($this->lat, $this->lon);
 
         $curl = new CURL($this->url);

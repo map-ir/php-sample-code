@@ -17,9 +17,9 @@ class Route
         $this->coordinates = $coordinates;
         $this->alternatives = $alternatives;
         $this->steps = $steps;
-        $this->overview=$overview;
-        $this->type=$type;
-        $this->apiKey=$apiKey;
+        $this->overview = $overview;
+        $this->type = $type;
+        $this->apiKey = $apiKey;
         var_dump($this->makeURL());
         $curl = new CURL(
             $this->makeURL()

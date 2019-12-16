@@ -25,6 +25,6 @@ $select = 'poi';
 $filter = 'province eq قم';
 $apiKey='Your map.ir api key';
 
-$search = new Route($url);
+$search = new Search($url);
 
 var_dump($search->get($text, $lat, $lon, $select, $filter, $apiKey));

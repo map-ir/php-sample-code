@@ -8,7 +8,7 @@ class CURL
 
     public $headers;
 
-    public $response;
+    public $respone;
     private $server_output;
 
     public function __construct($url)
@@ -24,7 +24,7 @@ class CURL
         $this->headers = $headers;
     }
 
-    public function get()
+    public function post()
     {
         if ($this->headers) {
             curl_setopt($this->client, CURLOPT_HTTPHEADER, $this->headers);
@@ -38,16 +38,16 @@ class CURL
     public function parse()
     {
         if ($this->server_output) {
-            $this->response = json_decode($this->server_output, true);
+            $this->respone = json_decode($this->server_output, true);
         } else {
-            $this->response = [];
+            $this->respone = [];
         }
 
-        return $this->response;
+        return $this->respone;
     }
 
     public function getResponse()
     {
-        return $this->response;
+        return $this->respone;
     }
 }
